@@ -1,0 +1,28 @@
+<odoo>
+    <data noupdate="1">
+        <record id="van_gogh" model="res.partner">
+            <field name="name">Van Gogh</field>
+            <field name="phone">0000000000</field>
+        </record>
+
+        <record id="art_1" model="art.work">
+            <field name="name">Starry Night</field>
+            <field name="currator_id">2</field>
+            <field name="artist_id" ref="art_gallery.van_gogh"/>
+            <field name="finished_date" eval="time.strftime('1889-06-18')"/>
+            <field name="frame">gold</field>
+            <field name="art_image" type="base64" file="art_gallery/static/src/img/starry_night_full.jpg"/>
+        </record>
+
+        <record id="art_2" model="art.work">
+            <field name="name">Van Gogh self-portrait</field>
+            <field name="currator_id">2</field>
+            <field name="artist_id" ref="art_gallery.van_gogh"/>
+            <field name="finished_date" eval="time.strftime('1889-09-01')"/>
+            <field name="length">26.0</field>
+            <field name="width">21.0</field>
+            <field name="frame">black</field>
+            <field name="art_image" type="base64" file="art_gallery/static/src/img/self_portrait.jpg"/>
+        </record>
+    </data>
+</odoo>

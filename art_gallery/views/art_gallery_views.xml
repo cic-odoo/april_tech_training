@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="art_work_form_view">
+            <field name="name">art.work.form.view</field>
+            <field name="model">art.work</field>
+            <field name="arch" type="xml">
+                <form string="Art Work Form">
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <group name="art_info">
+                            <group>
+                                <field name="artist_id"/>
+                                <field name="phone"/>
+                                <field name="currator_id"/>
+                            </group>
+                            <group>
+                                <field name="length"/>
+                                <field name="width"/>
+                                <field name="frame"/>
+                            </group>
+                        </group>
+                        
+                        <group>
+                            <group>
+                                <field name="product_ids" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="finished_date"/>
+                                <field name="art_image" widget="image"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="art_work_calendar_view">
+            <field name="name">art.work.calendar.view</field>
+            <field name="model">art.work</field>
+            <field name="arch" type="xml">
+                <calendar string="Art Work History"
+                          date_start="finished_date"
+                          color="currator_id"
+                          create="0"
+                          mode="year">
+                    <field name="name"/>
+                    <field name="artist_id"/>
+                </calendar>
+            </field>
+        </record>
+    </data>
+</odoo>

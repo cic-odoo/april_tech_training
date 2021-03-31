@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_move_inherit_art" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@name='payment_term']" position="before">
+            <p class="something">
+                <span t-field="o.art_work_id.art_image" widget="image"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>
