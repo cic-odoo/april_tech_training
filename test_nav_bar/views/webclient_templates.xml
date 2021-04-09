@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_common_test_customer" inherit_id="web.assets_common" name="Customer Header Color">
+        <xpath expr="link[last()]" position="after">
+            <script type="text/javascript" src="/test_nav_bar/static/src/js/color_nav_bar.js"/>
+        </xpath>
+    </template>
+</odoo>
